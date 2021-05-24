@@ -1,0 +1,251 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://theme.tres" type="Theme" id=2]
+[ext_resource path="res://m5x7_small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://m5x7_large.tres" type="DynamicFont" id=4]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="set_user_name" type="TextEdit" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+text = "set name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainList" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 120.0
+margin_top = 525.0
+margin_right = 1320.0
+margin_bottom = 2730.0
+
+[node name="TopList" type="VBoxContainer" parent="CenterContainer/MainList"]
+margin_right = 1200.0
+margin_bottom = 957.0
+theme = SubResource( 1 )
+
+[node name="title" type="Label" parent="CenterContainer/MainList/TopList"]
+margin_right = 1200.0
+margin_bottom = 102.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "wait, who was right?"
+align = 1
+autowrap = true
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/MainList/TopList"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 106.0
+margin_right = 1200.0
+margin_bottom = 306.0
+theme = SubResource( 1 )
+custom_constants/separation = 200
+
+[node name="names" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
+margin_top = 310.0
+margin_right = 1200.0
+margin_bottom = 412.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
+alignment = 1
+
+[node name="user_name" type="Label" parent="CenterContainer/MainList/TopList/names"]
+margin_right = 570.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 102, 102 )
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "someone"
+align = 1
+autowrap = true
+clip_text = true
+
+[node name="other_name" type="Label" parent="CenterContainer/MainList/TopList/names"]
+margin_left = 630.0
+margin_right = 1200.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 102, 102 )
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "another"
+align = 1
+autowrap = true
+clip_text = true
+
+[node name="scores" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
+margin_top = 416.0
+margin_right = 1200.0
+margin_bottom = 733.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
+alignment = 1
+
+[node name="your_score" type="Label" parent="CenterContainer/MainList/TopList/scores"]
+margin_right = 570.0
+margin_bottom = 317.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+
+[node name="their_score" type="Label" parent="CenterContainer/MainList/TopList/scores"]
+margin_left = 630.0
+margin_right = 1200.0
+margin_bottom = 317.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+
+[node name="buttons" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
+margin_top = 737.0
+margin_right = 1200.0
+margin_bottom = 845.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
+alignment = 1
+
+[node name="left_button" type="Button" parent="CenterContainer/MainList/TopList/buttons"]
+margin_right = 570.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "+1"
+
+[node name="right_button" type="Button" parent="CenterContainer/MainList/TopList/buttons"]
+margin_left = 630.0
+margin_right = 1200.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "+1"
+
+[node name="buttons2" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
+margin_top = 849.0
+margin_right = 1200.0
+margin_bottom = 957.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
+alignment = 1
+
+[node name="left_down" type="Button" parent="CenterContainer/MainList/TopList/buttons2"]
+margin_right = 570.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "-1"
+
+[node name="right_down" type="Button" parent="CenterContainer/MainList/TopList/buttons2"]
+margin_left = 630.0
+margin_right = 1200.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "-1"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/MainList"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 961.0
+margin_right = 1200.0
+margin_bottom = 1061.0
+custom_constants/separation = 100
+
+[node name="BottomList" type="VBoxContainer" parent="CenterContainer/MainList"]
+margin_top = 1065.0
+margin_right = 1200.0
+margin_bottom = 2205.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="Users" type="ItemList" parent="CenterContainer/MainList/BottomList"]
+margin_right = 1200.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 1200, 800 )
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="CenterContainer/MainList/BottomList"]
+margin_top = 804.0
+margin_right = 1200.0
+margin_bottom = 924.0
+rect_min_size = Vector2( 0, 120 )
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "add user..."
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/MainList/BottomList"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 928.0
+margin_right = 1200.0
+margin_bottom = 1028.0
+custom_constants/separation = 100
+
+[node name="delete" type="Button" parent="CenterContainer/MainList/BottomList"]
+margin_top = 1032.0
+margin_right = 1200.0
+margin_bottom = 1140.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "delete selected user"
+
+[connection signal="focus_entered" from="set_user_name" to="." method="_on_set_user_name_focus_entered"]
+[connection signal="text_changed" from="set_user_name" to="." method="_on_set_user_name_text_changed"]
+[connection signal="pressed" from="CenterContainer/MainList/TopList/buttons/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainList/TopList/buttons/right_button" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainList/TopList/buttons2/left_down" to="." method="_on_left_down_pressed"]
+[connection signal="pressed" from="CenterContainer/MainList/TopList/buttons2/right_down" to="." method="_on_right_down_pressed"]
+[connection signal="item_activated" from="CenterContainer/MainList/BottomList/Users" to="." method="_on_Users_item_activated"]
+[connection signal="item_selected" from="CenterContainer/MainList/BottomList/Users" to="." method="_on_Users_item_selected"]
+[connection signal="focus_entered" from="CenterContainer/MainList/BottomList/TextEdit" to="." method="_on_TextEdit_focus_entered"]
+[connection signal="focus_exited" from="CenterContainer/MainList/BottomList/TextEdit" to="." method="_on_TextEdit_focus_exited"]
+[connection signal="text_changed" from="CenterContainer/MainList/BottomList/TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="CenterContainer/MainList/BottomList/delete" to="." method="_on_delete_pressed"]
