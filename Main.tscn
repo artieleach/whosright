@@ -46,9 +46,9 @@ __meta__ = {
 
 [node name="MainList" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 120.0
-margin_top = 525.0
+margin_top = 377.0
 margin_right = 1320.0
-margin_bottom = 2730.0
+margin_bottom = 2582.0
 
 [node name="TopList" type="VBoxContainer" parent="CenterContainer/MainList"]
 margin_right = 1200.0
