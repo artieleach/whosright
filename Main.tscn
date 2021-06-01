@@ -1,11 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://theme.tres" type="Theme" id=2]
 [ext_resource path="res://m5x7_small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://m5x7_large.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Theme.tres" type="Theme" id=5]
 
 [sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -29,7 +30,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
+theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "set name"
 __meta__ = {
@@ -46,13 +47,14 @@ __meta__ = {
 
 [node name="MainList" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 120.0
-margin_top = 377.0
+margin_top = 234.0
 margin_right = 1320.0
-margin_bottom = 2582.0
+margin_bottom = 2725.0
+theme = SubResource( 1 )
 
 [node name="TopList" type="VBoxContainer" parent="CenterContainer/MainList"]
 margin_right = 1200.0
-margin_bottom = 957.0
+margin_bottom = 1283.0
 theme = SubResource( 1 )
 
 [node name="title" type="Label" parent="CenterContainer/MainList/TopList"]
@@ -70,22 +72,22 @@ autowrap = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 106.0
 margin_right = 1200.0
-margin_bottom = 306.0
+margin_bottom = 406.0
 theme = SubResource( 1 )
-custom_constants/separation = 200
+custom_constants/separation = 300
 
 [node name="names" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
-margin_top = 310.0
+margin_top = 410.0
 margin_right = 1200.0
-margin_bottom = 412.0
+margin_bottom = 530.0
 theme = SubResource( 1 )
 custom_constants/separation = 60
 alignment = 1
 
 [node name="user_name" type="Label" parent="CenterContainer/MainList/TopList/names"]
 margin_right = 570.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 102, 102 )
+margin_bottom = 120.0
+rect_min_size = Vector2( 102, 120 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
@@ -98,8 +100,8 @@ clip_text = true
 [node name="other_name" type="Label" parent="CenterContainer/MainList/TopList/names"]
 margin_left = 630.0
 margin_right = 1200.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 102, 102 )
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 120 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
@@ -110,9 +112,9 @@ autowrap = true
 clip_text = true
 
 [node name="scores" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
-margin_top = 416.0
+margin_top = 534.0
 margin_right = 1200.0
-margin_bottom = 733.0
+margin_bottom = 851.0
 theme = SubResource( 1 )
 custom_constants/separation = 60
 alignment = 1
@@ -139,69 +141,100 @@ text = "0"
 align = 1
 
 [node name="buttons" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
-margin_top = 737.0
+margin_top = 855.0
 margin_right = 1200.0
-margin_bottom = 845.0
+margin_bottom = 1035.0
 theme = SubResource( 1 )
 custom_constants/separation = 60
 alignment = 1
 
 [node name="left_button" type="Button" parent="CenterContainer/MainList/TopList/buttons"]
-margin_right = 570.0
-margin_bottom = 108.0
+margin_right = 1200.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 180 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "+1"
+text = "+"
 
 [node name="right_button" type="Button" parent="CenterContainer/MainList/TopList/buttons"]
+visible = false
 margin_left = 630.0
 margin_right = 1200.0
-margin_bottom = 108.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 120 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "+1"
+text = "+"
+
+[node name="HSeparator3" type="HSeparator" parent="CenterContainer/MainList/TopList"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 1039.0
+margin_right = 1200.0
+margin_bottom = 1099.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
 
 [node name="buttons2" type="HBoxContainer" parent="CenterContainer/MainList/TopList"]
-margin_top = 849.0
+margin_top = 1103.0
 margin_right = 1200.0
-margin_bottom = 957.0
+margin_bottom = 1283.0
 theme = SubResource( 1 )
 custom_constants/separation = 60
 alignment = 1
 
 [node name="left_down" type="Button" parent="CenterContainer/MainList/TopList/buttons2"]
-margin_right = 570.0
-margin_bottom = 108.0
+margin_right = 1200.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 180 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "-1"
+text = "-"
 
 [node name="right_down" type="Button" parent="CenterContainer/MainList/TopList/buttons2"]
+visible = false
 margin_left = 630.0
 margin_right = 1200.0
-margin_bottom = 108.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 120 )
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "-1"
+text = "-"
 
 [node name="HSeparator" type="HSeparator" parent="CenterContainer/MainList"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 961.0
+margin_top = 1287.0
 margin_right = 1200.0
-margin_bottom = 1061.0
-custom_constants/separation = 100
+margin_bottom = 1347.0
+theme = SubResource( 1 )
+custom_constants/separation = 60
 
 [node name="BottomList" type="VBoxContainer" parent="CenterContainer/MainList"]
-margin_top = 1065.0
+margin_top = 1351.0
 margin_right = 1200.0
-margin_bottom = 2205.0
+margin_bottom = 2491.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = SubResource( 1 )
 alignment = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/MainList/BottomList"]
+visible = false
+margin_right = 876.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
+theme = ExtResource( 5 )
+follow_focus = true
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameList" type="VBoxContainer" parent="CenterContainer/MainList/BottomList/ScrollContainer"]
+theme = ExtResource( 5 )
 
 [node name="Users" type="ItemList" parent="CenterContainer/MainList/BottomList"]
 margin_right = 1200.0
@@ -227,6 +260,7 @@ self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 928.0
 margin_right = 1200.0
 margin_bottom = 1028.0
+theme = SubResource( 1 )
 custom_constants/separation = 100
 
 [node name="delete" type="Button" parent="CenterContainer/MainList/BottomList"]
@@ -236,7 +270,6 @@ margin_bottom = 1140.0
 theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "delete selected user"
-
 [connection signal="focus_entered" from="set_user_name" to="." method="_on_set_user_name_focus_entered"]
 [connection signal="text_changed" from="set_user_name" to="." method="_on_set_user_name_text_changed"]
 [connection signal="pressed" from="CenterContainer/MainList/TopList/buttons/left_button" to="." method="_on_left_button_pressed"]
